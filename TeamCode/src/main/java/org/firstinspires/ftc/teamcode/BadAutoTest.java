@@ -19,12 +19,12 @@ public class BadAutoTest extends LinearOpMode {
 
         Hardware r = new Hardware(this);
 
-        Odometry o = new Odometry();
+        //Odometry o = new Odometry();
 
-        r.DM1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        r.DM2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        r.DM3.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        r.DM4.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        r.DM1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        r.DM2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        r.DM3.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        r.DM4.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         r.startVision();
 
@@ -36,18 +36,18 @@ public class BadAutoTest extends LinearOpMode {
 
 
         if (r.ringAmount() == 0) {
-            pleaseMove(1, .5, -2);
             pleaseMove(1, .5, 0);
-            pleaseMove(1, -.5, 0);
+            r.Grab.setPosition(180);
         }
         else if (r.ringAmount() == 1) {
             pleaseMove(1, .5, -2);
             pleaseMove(1, .5, 0);
+            r.Grab.setPosition(180);
             pleaseMove(1, -.5, 0);
         }
         else if (r.ringAmount() == 4) {
-            pleaseMove(1, .5, -2);
             pleaseMove(1, .5, 0);
+            r.Grab.setPosition(180);
             pleaseMove(1, -.5, 0);
         }
 
@@ -73,6 +73,8 @@ public class BadAutoTest extends LinearOpMode {
             r.PowerControl(-speed, speed, -speed, speed);
         }
         Thread.sleep((time * 1000));
+        r.PowerControl(0, 0, 0, 0);
+
     }
 
 }

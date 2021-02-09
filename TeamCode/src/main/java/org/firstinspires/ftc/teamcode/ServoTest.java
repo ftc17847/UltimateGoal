@@ -3,16 +3,16 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp(name = "Good Controls", group = "TeleOp")
+@TeleOp(name = "ServoTest", group = "Test")
 
-public class DC1 extends LinearOpMode {
+public class ServoTest extends LinearOpMode {
 
     Hardware hardware = new Hardware(this);
     //Odometry odometry = new Odometry();
     double MP = .5; //Movement Power
     double IP = .3; //Intake Power
     double CP = .3; //conveyor Power
-    double LP = 50 * 140 / 60; //Launcher velocity (rpm)
+    double LP = 30 * 140 / 60; //Launcher velocity (rpm)
     double WP = .3;
     //I think that the x or y direction of each switch might have to be made negative
     float LSX1 = gamepad1.left_stick_x;
@@ -49,48 +49,13 @@ public class DC1 extends LinearOpMode {
 
         while(opModeIsActive()) {
 
-            p1 = (LSY1 + LSX1 + RT1 - LT1) * MP;
-            p2 = (LSY1 + LSX1 + LT1 - RT1) * MP;
-            p3 = (LSY1 - LSX1 + RT1 - LT1) * MP;
-            p4 = (LSY1 - LSX1 + LT1 - RT1) * MP;
-            hardware.Wobble.setPower(LSY2 * WP);
-
-            //this might not be necessary
-            if (p1 > 1) {p1 = 1;}
-            if (p1 < -1) {p1 = -1;}
-            if (p2 > 1) {p1 = 1;}
-            if (p2 < -1) {p1 = -1;}
-            if (p3 > 1) {p1 = 1;}
-            if (p3 < -1) {p1 = -1;}
-            if (p4 > 1) {p1 = 1;}
-            if (p4 < -1) {p1 = -1;}
-
-            hardware.PowerControl(p1, p2, p3, p4);
-
-            /*
-            if (AB1) {
-
-                odometry.moveTo(12, 12, 0);
-
-            }
-             */
-
-            if (RT2 > 0) {
-                hardware.C.setPower(CP);
-                hardware.I.setPower(IP);
-            }
-            else if (AB2){
-                hardware.C.setPower(0);
-                hardware.I.setPower(0);
-            }
-
 
             if (LT2 > 0) {
                 hardware.L.setVelocity(LP);
                 hardware.StopRing.setPosition(180);
             }
             else {
-                hardware.L.setVelocity(0);
+                hardware.L.setPower(0);
                 hardware.StopRing.setPosition(0);
             }
 
@@ -106,10 +71,6 @@ public class DC1 extends LinearOpMode {
 
             }
 
-
-
-
-            //odometry.updateLocation();
 
         }
 

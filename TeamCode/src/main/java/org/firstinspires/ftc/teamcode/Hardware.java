@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -29,7 +30,7 @@ public class Hardware {
     public DcMotor En3;
 
     //Launcher motor
-    public DcMotor L;
+    public DcMotorEx L;
 
     //Intake motor
     public DcMotor I;
@@ -64,7 +65,7 @@ public class Hardware {
 
     public void init() {
 
-/*
+
         DM1 = hardwareMap.get(DcMotor.class, "DM1");
         DM2 = hardwareMap.get(DcMotor.class, "DM2");
         DM3 = hardwareMap.get(DcMotor.class, "DM3");
@@ -73,11 +74,11 @@ public class Hardware {
 
 
 
-        En1 = hardwareMap.get(DcMotor.class, "En1");
-        En2 = hardwareMap.get(DcMotor.class, "En2");
-        En3 = hardwareMap.get(DcMotor.class, "En3");
+        //En1 = hardwareMap.get(DcMotor.class, "En1");
+        //En2 = hardwareMap.get(DcMotor.class, "En2");
+        //En3 = hardwareMap.get(DcMotor.class, "En3");
 
-        L = hardwareMap.get(DcMotor.class, "L");
+        L = hardwareMap.get(DcMotorEx.class, "L");
 
         I = hardwareMap.get(DcMotor.class, "I");
 
@@ -104,9 +105,9 @@ public class Hardware {
         DM4.setDirection(DcMotor.Direction.REVERSE);
 
 
-        En1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        En2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        En3.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //En1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //En2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //En3.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //En1.setDirection(DcMotor.Direction.REVERSE);
         //En2.setDirection(DcMotor.Direction.REVERSE);
@@ -122,10 +123,10 @@ public class Hardware {
 
         C.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        DM1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        DM2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        DM3.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        DM4.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        DM1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        DM2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        DM3.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        DM4.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         L.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
@@ -135,9 +136,6 @@ public class Hardware {
 
         Wobble.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
-
- */
 
     }
 
