@@ -13,6 +13,7 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 import org.openftc.easyopencv.OpenCvInternalCamera;
 
 
+
 public class Hardware {
 
     //drive motors
@@ -57,9 +58,13 @@ public class Hardware {
         init();
     }
 
+    public Hardware() {
+
+    }
+
     public void init() {
 
-
+/*
         DM1 = hardwareMap.get(DcMotor.class, "DM1");
         DM2 = hardwareMap.get(DcMotor.class, "DM2");
         DM3 = hardwareMap.get(DcMotor.class, "DM3");
@@ -132,6 +137,8 @@ public class Hardware {
 
 
 
+ */
+
     }
 
     public void PowerControl(double p1, double p2, double p3, double p4) {
@@ -168,7 +175,7 @@ public class Hardware {
     public void startVision(){
 
 
-        OpenCvCamera webcam;
+        final OpenCvCamera webcam;
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
         //webcam = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "webcam"), cameraMonitorViewId);
         //the one above is for webcam and the one below is for phone back camera

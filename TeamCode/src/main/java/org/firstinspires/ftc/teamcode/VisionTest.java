@@ -24,12 +24,25 @@ public class VisionTest extends LinearOpMode {
         runtime.reset();
 
 
+        Thread.sleep(1000);
+
+        telemetry.addData("RingAmount: ", r.ringAmount());
+        telemetry.update();
         Thread.sleep(3000);
         telemetry.addData("RingAmount: ", r.ringAmount());
         telemetry.update();
-        Thread.sleep(5000);
-
-
-
+        Thread.sleep(3000);
+        telemetry.addData("RingAmount: ", r.ringAmount());
+        telemetry.update();
+        Thread.sleep(3000);
+        telemetry.addData("RingAmount: ", r.ringAmount());
+        telemetry.update();
+        Thread.sleep(3000);
+        telemetry.addData("RingAmount: ", r.ringAmount());
+        telemetry.update();
+        Thread.sleep(3000);
+        telemetry.addData("RingAmount: ", r.ringAmount());
+        telemetry.update();
+        Thread.sleep(3000);
     }
 }
