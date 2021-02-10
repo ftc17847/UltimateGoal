@@ -40,13 +40,13 @@ public class Hardware {
 
     //Wobble Grabber Motor
 
-    public DcMotor Wobble;
+    //public DcMotor Wobble;
 
     //if we need (cr)servos
     //public CRServo ;
 
     public Servo StopRing;
-    public Servo Grab;
+    //public Servo Grab;
 
     VisionPipeline vision = new VisionPipeline();
 
@@ -84,16 +84,16 @@ public class Hardware {
 
         C = hardwareMap.get(DcMotor.class, "C");
 
-        Wobble = hardwareMap.get(DcMotor.class, "Wobble");
+        //Wobble = hardwareMap.get(DcMotor.class, "Wobble");
 
 
 
         //name = this.hardwareMap.get(CRServo.class, "name");
 
         StopRing = hardwareMap.get(Servo.class, "StopRing");
-        Grab = hardwareMap.get(Servo.class, "Grab");
+        //Grab = hardwareMap.get(Servo.class, "Grab");
         StopRing.setPosition(0);
-        Grab.setPosition(0);
+        //Grab.setPosition(0);
 
         DM1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         DM2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -113,7 +113,7 @@ public class Hardware {
         //En2.setDirection(DcMotor.Direction.REVERSE);
         //En3.setDirection(DcMotor.Direction.REVERSE);
 
-        Wobble.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //Wobble.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         L.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
@@ -134,7 +134,7 @@ public class Hardware {
 
         C.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        Wobble.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //Wobble.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
     }

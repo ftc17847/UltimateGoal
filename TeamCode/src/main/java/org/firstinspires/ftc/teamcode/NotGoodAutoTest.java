@@ -33,19 +33,19 @@ public class NotGoodAutoTest extends LinearOpMode {
 
         if (r.ringAmount() == 0) {
             pleaseMove(60, 60, 0);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
             Thread.sleep(500);
         }
         else if (r.ringAmount() == 1) {
             pleaseMove(72, 60, 0);
             pleaseMove(24, 60, -2);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
             Thread.sleep(500);
             pleaseMove(24, -60, 0);
         }
         else if (r.ringAmount() == 4) {
             pleaseMove(120, 60, 0);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
             Thread.sleep(500);
             pleaseMove(48, -60, 0);
         }

@@ -37,17 +37,17 @@ public class BadAutoTest extends LinearOpMode {
 
         if (r.ringAmount() == 0) {
             pleaseMove(1, .5, 0);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
         }
         else if (r.ringAmount() == 1) {
             pleaseMove(1, .5, -2);
             pleaseMove(1, .5, 0);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
             pleaseMove(1, -.5, 0);
         }
         else if (r.ringAmount() == 4) {
             pleaseMove(1, .5, 0);
-            r.Grab.setPosition(180);
+            //r.Grab.setPosition(180);
             pleaseMove(1, -.5, 0);
         }
 

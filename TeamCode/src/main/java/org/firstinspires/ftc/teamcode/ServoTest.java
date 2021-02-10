@@ -59,7 +59,7 @@ public class ServoTest extends LinearOpMode {
                 hardware.StopRing.setPosition(0);
             }
 
-            if (AB2) {
+            /*if (AB2) {
 
                 hardware.Grab.setPosition(180);
 
@@ -70,6 +70,8 @@ public class ServoTest extends LinearOpMode {
                 hardware.Grab.setPosition(0);
 
             }
+
+             */
 
 
         }

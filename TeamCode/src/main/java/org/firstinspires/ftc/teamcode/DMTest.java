@@ -2,17 +2,17 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name = "Better Movement Test", group = "Test")
+@TeleOp(name = "DM Test", group = "Test")
 
-public class DCTest2 extends LinearOpMode {
+public class DMTest extends LinearOpMode {
 
 
     //Odometry odometry = new Odometry();
-    float MP = 1; //Movement Power
-    float IP = 1; //Intake Power
-    float CP = 1; //conveyor Power
-    float LP = 1; //Launcher Power
+
     //I think that the x or y direction of each switch might have to be made negative
 
     int a = 1;
@@ -22,18 +22,22 @@ public class DCTest2 extends LinearOpMode {
     int e = 1;
     boolean f = false;
 
-    double p1, p2, p3, p4;
 
     @Override
     public void runOpMode() {
-
+        double MP = 1; //Movement Power
+        double IP = 1; //Intake Power
+        double CP = 1; //conveyor Power
+        double LP = 1; //Launcher Power
+        double p1, p2, p3, p4;
         Hardware hardware = new Hardware(this);
 
         waitForStart();
 
         while(opModeIsActive()) {
+
             float LSX1 = gamepad1.left_stick_x;
-            float LSY1 = -gamepad1.left_stick_y;
+            float LSY1 = gamepad1.left_stick_y;
             float RSX1 = gamepad1.right_stick_x;
             float RSY1 = gamepad1.right_stick_y;
             boolean AB1 = gamepad1.a;
@@ -47,20 +51,30 @@ public class DCTest2 extends LinearOpMode {
             boolean XB2 = gamepad2.x;
             boolean YB2 = gamepad2.y;
 
-            p1 = Math.pow(LSY1 + LSX1 + RT1 - LT1, 3) * MP;
-            p2 = Math.pow(LSY1 + LSX1 + LT1 - RT1, 3) * MP;
-            p3 = Math.pow(LSY1 - LSX1 + RT1 - LT1, 3) * MP;
-            p4 = Math.pow(LSY1 - LSX1 + LT1 - RT1, 3) * MP;
-
-            //this might not be necessary
-            if (p1 > 1) {p1 = 1;}
-            if (p1 < -1) {p1 = -1;}
-            if (p2 > 1) {p1 = 1;}
-            if (p2 < -1) {p1 = -1;}
-            if (p3 > 1) {p1 = 1;}
-            if (p3 < -1) {p1 = -1;}
-            if (p4 > 1) {p1 = 1;}
-            if (p4 < -1) {p1 = -1;}
+            if (AB1) {
+                p1 = .3;
+            }
+            else {
+                p1 = 0;
+            }
+            if (BB1) {
+                p2 = .3;
+            }
+            else {
+                p2 = 0;
+            }
+            if (YB1) {
+                p3 = .3;
+            }
+            else {
+                p3 = 0;
+            }
+            if (XB1) {
+                p4 = .3;
+            }
+            else {
+                p4 = 0;
+            }
 
             hardware.PowerControl(p1, p2, p3, p4);
 
