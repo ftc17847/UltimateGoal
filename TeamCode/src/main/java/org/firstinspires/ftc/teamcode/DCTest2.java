@@ -33,7 +33,7 @@ public class DCTest2 extends LinearOpMode {
 
         while(opModeIsActive()) {
             float LSX1 = gamepad1.left_stick_x;
-            float LSY1 = -gamepad1.left_stick_y;
+            float LSY1 = gamepad1.left_stick_y;
             float RSX1 = gamepad1.right_stick_x;
             float RSY1 = gamepad1.right_stick_y;
             boolean AB1 = gamepad1.a;

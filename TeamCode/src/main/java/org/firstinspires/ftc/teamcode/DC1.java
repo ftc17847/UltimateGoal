@@ -13,7 +13,7 @@ public class DC1 extends LinearOpMode {
     double MP = .5; //Movement Power
     double IP = .3; //Intake Power
     double CP = .3; //conveyor Power
-    double LP = 50 * 140 / 60; //Launcher velocity (rpm)
+    double LP = 30 * 23*26 / 60; //Launcher velocity (rpm)
     double WP = .3;
     int a = 1;
     boolean b = false;
@@ -36,7 +36,7 @@ public class DC1 extends LinearOpMode {
 
             //I think that the x or y direction of each switch might have to be made negative
             float LSX1 = gamepad1.left_stick_x;
-            float LSY1 = -gamepad1.left_stick_y;
+            float LSY1 = gamepad1.left_stick_y;
             float RSX1 = gamepad1.right_stick_x;
             float RSY1 = gamepad1.right_stick_y;
             float LSY2 = gamepad2.left_stick_y;
@@ -44,8 +44,8 @@ public class DC1 extends LinearOpMode {
             boolean BB1 = gamepad1.b;
             boolean XB1 = gamepad1.x;
             boolean YB1 = gamepad1.y;
-            float LT1 = gamepad1.left_trigger;
-            float RT1 = gamepad1.right_trigger;
+            float LT1 = -gamepad1.left_trigger;
+            float RT1 = -gamepad1.right_trigger;
             boolean AB2 = gamepad2.a;
             boolean BB2 = gamepad2.b;
             boolean XB2 = gamepad2.x;

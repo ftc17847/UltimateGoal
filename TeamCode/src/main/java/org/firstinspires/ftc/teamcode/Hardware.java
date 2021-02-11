@@ -101,8 +101,8 @@ public class Hardware {
         DM4.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
-        DM2.setDirection(DcMotor.Direction.REVERSE);
-        DM4.setDirection(DcMotor.Direction.REVERSE);
+        DM1.setDirection(DcMotor.Direction.REVERSE);
+        DM3.setDirection(DcMotor.Direction.REVERSE);
 
 
         //En1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
