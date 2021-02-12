@@ -19,6 +19,8 @@ public class BadAutoTest extends LinearOpMode {
 
         Hardware r = new Hardware(this);
 
+        r.StopRing.setPosition(100);
+
         //Odometry o = new Odometry();
 
         r.DM1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -34,20 +36,27 @@ public class BadAutoTest extends LinearOpMode {
         telemetry.addData("RingAmount: ", r.ringAmount());
         telemetry.update();
 
+        pleaseMove(1, .5, -2);
+        pleaseMove(1, .5, -1);
 
         if (r.ringAmount() == 0) {
             pleaseMove(1, .5, 0);
+            r.StopRing.setPosition(100);
+
+
             //r.Grab.setPosition(180);
         }
         else if (r.ringAmount() == 1) {
             pleaseMove(1, .5, -2);
             pleaseMove(1, .5, 0);
             //r.Grab.setPosition(180);
+            r.StopRing.setPosition(100);
             pleaseMove(1, -.5, 0);
         }
         else if (r.ringAmount() == 4) {
             pleaseMove(1, .5, 0);
             //r.Grab.setPosition(180);
+            r.StopRing.setPosition(100);
             pleaseMove(1, -.5, 0);
         }
 
